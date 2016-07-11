@@ -6,3 +6,5 @@
 
 学习书籍：    
 http://pan.baidu.com/s/1c1Zjqwg
+
+python的了解，仅仅处于了解阶段。
