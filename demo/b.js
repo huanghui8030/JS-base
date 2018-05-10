@@ -13,7 +13,7 @@
  * huanghui 20180509
  */
 function b(num){
-	console.log(num);
+	console.log("输入的数字："+num);
 	var str = new String(num); //必须转成String类型，否则不能使用。
 	var dotArr = str.split('.');//dotArr[0]='123456',dotArr[1]='9'
 	var beforeArr = dotArr[0].split('');//['1','2','3','4','5','6']
@@ -28,7 +28,8 @@ function b(num){
 	if(dotArr.length==2){
 		newStr = newStr +'.'+ dotArr[1];
 	}
-	console.log(newStr);
+	console.log("生成的字符串："+newStr);
 	return newStr;
 }
 b(1233344345601.922);
+b(232323230.23);
