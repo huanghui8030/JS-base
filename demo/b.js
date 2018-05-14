@@ -33,3 +33,27 @@ function b(num){
 }
 b(1233344345601.922);
 b(232323230.23);
+
+
+//简化后的方法
+/**
+ * 大数据转换，添加千位分隔符（逗号）
+ * @param  {Number} num 输入数字
+ * @return {String} 返回带有逗号的字符串
+ * huanghui 20180511
+ */
+function changeNum(num){
+    var dotArr = (new String(num)).split('.'),
+        fArr = dotArr[0].split('').reverse(),
+        newStr = '';
+    for (var i = 3; i < fArr.length; i=i+3 ) {
+        fArr.splice(i, 0,',');
+        i = i+1 ;
+    }
+    fArr.reverse();
+    newStr = fArr.join('');
+    if(dotArr.length==2){
+        newStr = newStr +'.'+ dotArr[1];
+    }
+    return newStr;
+}
