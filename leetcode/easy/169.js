@@ -15,10 +15,9 @@
  */
 (function(nums) {
     var len = nums.length;
-    var newArr = [...new Set(nums)];
-    var lenArr = nums.length - newArr.length;
+    var newArr = [...new Set(nums)];//数组去重
+    var lenArr = nums.length - newArr.length;//重复的个数
     for (var i = 0,newLen=newArr.length ; i < newLen ; i++) {
-    	
     	var count = 0;
     	for (var j = 0 ; j < len ; j++) {
     		if(newArr[i] === nums[j]){
