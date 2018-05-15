@@ -7,6 +7,7 @@
 function arrChangeFn(aArr,bArr){
 	console.log("输入的数组：",aArr,bArr);
 	aArr.push.apply(aArr,bArr);//var newArr = aArr.concat(bArr); 数组合并
+    // 或者是：Array.prototype.push.apply(arr1,arr2);
 	aArr.sort(function(x,y){ //sort数组排序，默认为按字母排序。
 		return x-y;
 	});
