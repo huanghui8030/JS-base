@@ -6,16 +6,18 @@ var result2 = stringconcatWithPrefix("a", "b")  result2 = "hellworld+a+b"
  * huanghui 20180515
  */
 //第一个方法
-function stringconcat(a,b){
+function strconcatOhter(a,b){
     return a + '+' + b;
 }
+
+
 //另一种解法
-function stringconcat1(){
+function stringconcat(){
     return Array.prototype.join.call(arguments, '+');
 }
-var result1 = stringconcat("a", "b") ;
+var result = stringconcat("a", "b") ;
 
-console.log(result1); //a+b
+console.log(result); //a+b
 
 
 //第二个方法
