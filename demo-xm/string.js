@@ -13,12 +13,13 @@ function stringconcat(a,b){
 function stringconcat1(){
     return Array.prototype.join.call(arguments, '+');
 }
+
 var result1 = stringconcat("a", "b") ;
 
 console.log(result1); //a+b
 
 
-//第二个方法
+//方法一（call、apply的应用）
 stringconcat.prefix = function(str){
     var that = this;
     return function () {
@@ -27,10 +28,21 @@ stringconcat.prefix = function(str){
         return that.apply(null, arguments);
     }
 }
-
 var strPrefix = stringconcat.prefix("hellworld");
-//console.log('strPrefix:'+strPrefix);
-
 var result2 = strPrefix("a", "b") ;
-console.log('result2:'+result2);//result2:hellworld+a
+console.log('第一种方法:'+result2);//result2:hellworld+a
+
+
+//方法二（常用的实现方式）：
+stringconcat.prefix2 = function(str){
+    var str = str;
+    return function (a,b) {
+        var newStr  = str +'+' +a +'+' + b
+        return newStr;
+    }
+}
+//调用
+var strPrefix2 = stringconcat.prefix2("hellworld");
+var result21 = strPrefix2("a", "b") ;
+console.log('第二种方法:'+result21);//第二种方法:hellworld+a+b
 
