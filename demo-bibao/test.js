@@ -8,12 +8,14 @@ function Person(str){
        name = value;
     };
 }
-/*var person = new Person(); */
+var person = new Person(); 
 
-/*console.log(person.getName());//'Lee'
+console.log(person.getName()); //内部参数
+
+console.log(new Person('自己定义了name').getName());//自己定义了name
 
 person.setName('lwf');
 
-console.log(person.getName());//'lwf'*/
+console.log(person.getName());//'lwf'
 
 console.log(new Person(),new Person().title);
